@@ -25,7 +25,7 @@
   delay: 10
 
 - name: Disable Reporting Of Package Profile to Satellite
-  ansible.builtin.ini_file:
+  community.general.ini_file:
     path: /etc/rhsm/rhsm.conf
     section: rhsm
     option: report_package_profile
