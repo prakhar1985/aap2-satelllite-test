@@ -1,0 +1,6 @@
+---
+- hosts: all
+  vars_files:
+    - ./vars/vaulted-vars.yaml
+  tasks:
+    - import_tasks: tasks/main.yml
