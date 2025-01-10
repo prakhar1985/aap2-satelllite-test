@@ -14,7 +14,7 @@
   command: update-ca-trust
 
 - name: Install Satellite CA certificate package
-  yum:
+  ansible.builtin.dnf:
     name: "https://{{ set_repositories_satellite_hostname }}/pub/katello-ca-consumer-latest.noarch.rpm"
     state: present
     disablerepo: "*"
@@ -25,7 +25,7 @@
   delay: 10
 
 - name: Disable Reporting Of Package Profile to Satellite
-  ini_file:
+  ansible.builtin.ini_file:
     path: /etc/rhsm/rhsm.conf
     section: rhsm
     option: report_package_profile
